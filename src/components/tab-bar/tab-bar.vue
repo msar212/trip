@@ -1,6 +1,6 @@
 <script setup>
   import tabbarData from '@/assets/data/tabbar'
-  import { getAssertUrl } from "@/utiils/load_asserts"
+  import { getAssertUrl } from "@/utils/load_asserts"
 </script>
 
 <template>
