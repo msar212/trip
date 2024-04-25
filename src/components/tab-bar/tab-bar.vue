@@ -8,17 +8,15 @@
 
 <template>
   <div class="tab-bar">
-    <template v-for="(item, index) in tabbarData">
-      <router-link
-       :to="item.path"
-       :class="{'active': currentIndex === index}"
-        @click="currentIndex = index"
-      >
-        <img v-if="currentIndex === index" :src="getAssertUrl(item.imageActive)" alt="">
-        <img v-else :src="getAssertUrl(item.image)" alt="">
-        <span>{{item.text}}</span>
-      </router-link>
-    </template>
+    <van-tabbar v-model="currentIndex" active-color="#ff9645">
+      <van-tabbar-item v-for="(item, index) in tabbarData" :to="item.path" >
+        {{ item.text }}
+        <template #icon>
+          <img v-if="currentIndex === index" :src="getAssertUrl(item.imageActive)" alt="">
+          <img v-else :src="getAssertUrl(item.image)" alt="">
+        </template>
+      </van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 
@@ -31,21 +29,10 @@
     height: 50px;
     display: flex;
 
-    &>a {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    --van-tabbar-item-font-size: 14px;
 
-      &.active {
-        color: var(--primary-color);
-      }
-      
-      img {
-        width: 34px;
-        height: 34px;
-      }
+    img {
+      height: 30px;
     }
   }
 </style>
