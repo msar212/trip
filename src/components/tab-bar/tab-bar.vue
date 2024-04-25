@@ -1,27 +1,16 @@
-<script>
-  export default {
-    
-  }
+<script setup>
+  import tabbarData from '@/assets/data/tabbar'
+  import { getAssertUrl } from "@/utiils/load_asserts"
 </script>
 
 <template>
   <div class="tab-bar">
-    <router-link to="/home">
-      <img src="@/assets/img/tabbar/tab_home.png" alt="">
-      <span>首页</span>
-    </router-link>
-    <router-link to="/favor">
-      <img src="@/assets/img/tabbar/tab_favor.png" alt="">
-      <span>收藏</span>
-    </router-link>
-    <router-link to="/order">
-      <img src="@/assets/img/tabbar/tab_order.png" alt="">
-      <span>订单</span>
-    </router-link>
-    <router-link to="/message">
-      <img src="@/assets/img/tabbar/tab_message.png" alt="">
-      <span>消息</span>
-    </router-link>
+    <template v-for="item in tabbarData">
+      <router-link :to="item.path">
+        <img :src="getAssertUrl(item.image)" alt="">
+        <span>{{item.text}}</span>
+      </router-link>
+    </template>
   </div>
 </template>
 
