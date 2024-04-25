@@ -1,13 +1,21 @@
 <script setup>
+  import { ref } from 'vue'
   import tabbarData from '@/assets/data/tabbar'
   import { getAssertUrl } from "@/utils/load_asserts"
+
+  let currentIndex = ref(0)
 </script>
 
 <template>
   <div class="tab-bar">
-    <template v-for="item in tabbarData">
-      <router-link :to="item.path">
-        <img :src="getAssertUrl(item.image)" alt="">
+    <template v-for="(item, index) in tabbarData">
+      <router-link
+       :to="item.path"
+       :class="{'active': currentIndex === index}"
+        @click="currentIndex = index"
+      >
+        <img v-if="currentIndex === index" :src="getAssertUrl(item.imageActive)" alt="">
+        <img v-else :src="getAssertUrl(item.image)" alt="">
         <span>{{item.text}}</span>
       </router-link>
     </template>
@@ -29,6 +37,10 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
+      &.active {
+        color: var(--primary-color);
+      }
       
       img {
         width: 34px;

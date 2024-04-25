@@ -20,7 +20,7 @@ export default [
   {
     text: '消息',
     image: "tabbar/tab_message.png",
-    imageActive: "tabbar/tab_message_active.png",
+    imageActive: "tabbar/tab_message.png",
     path: '/message'
   },
 ]
