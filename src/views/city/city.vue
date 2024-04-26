@@ -3,7 +3,9 @@
   import { useRouter } from 'vue-router';
   import { storeToRefs } from 'pinia';
 
-  import useCityStore from '@/stores/modules/city'
+  import CityGroup from './cpns/city-group.vue';
+
+  import useCityStore from '@/stores/modules/city';
 
   let searchValue = ref('');
   let tabActive = ref('');
@@ -31,7 +33,7 @@
         show-action
         @cancel="cancelClick"
       />
-      <van-tabs v-model:active="tabActive" color="#f9854">
+      <van-tabs v-model:active="tabActive" color="#fe9d43">
         <template v-for="(value,key,index) in cityList" :key="key">
           <van-tab :title="value.title" :name="key"></van-tab>
         </template>
@@ -39,7 +41,7 @@
     </div>
 
     <div class="content">
-      {{currentGroup}}
+      <CityGroup :currentGroup="currentGroup" />
     </div>
   </div>
 </template>
