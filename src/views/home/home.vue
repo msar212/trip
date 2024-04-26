@@ -3,6 +3,7 @@
   import { useRouter } from 'vue-router';
   import { getAssertUrl } from '@/utils/load_asserts.js';
   import HomeNavBar from './cpns/home-nav-bar.vue';
+  import SearchBox from './cpns/search-box.vue';
 
   let router = useRouter();
 
@@ -25,6 +26,7 @@
         <img :src="getAssertUrl('home/icon_location.png')" alt="">
       </div>
     </div>
+    <SearchBox/>
   </div>
 </template>
 
@@ -41,7 +43,8 @@
 
       .city {
         flex: 1;
-        color: #342928;
+        color: #333;
+        font-size: 15px;
       }
 
       .current {
@@ -51,15 +54,15 @@
         span {
           position: relative;
           margin-top: 1px;
-          margin-right: 5px;
-          color: #6e6b67;
+          margin-right: 8px;
+          color: #666;
           font-size: 12px;
         }
 
         img {
           vertical-align: middle;
-          width: 14px;
-          height: 14px;
+          width: 18px;
+          height: 18px;
         }
       }
     }

@@ -23,5 +23,7 @@ defineProps({
 </template>
 
 <style lang="less" scoped>
-
+:deep(.van-index-bar__index) {
+  font-weight: 500 !important;
+}
 </style>

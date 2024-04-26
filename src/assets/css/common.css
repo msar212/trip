@@ -2,6 +2,7 @@
   --primary-color: #fe9d43; /* 主题色 */
   --van-search-left-icon-color: var(--primary-color) !important; /* vant search组件左侧图标颜色 */
   --van-index-bar-index-active-color: var(--primary-color) !important; /* vant index-bar组件选中索引颜色 */
+  --index-anchor-font-weight: 500; /* 索引锚点字体加粗 */
 }
 
 body {
