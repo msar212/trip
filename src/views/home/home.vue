@@ -3,7 +3,7 @@
   import { useRouter } from 'vue-router';
   import { getAssertUrl } from '@/utils/load_asserts.js';
   import HomeNavBar from './cpns/home-nav-bar.vue';
-  
+
   let router = useRouter();
 
   const currentPosition = () => {
