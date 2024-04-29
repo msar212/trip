@@ -38,7 +38,7 @@ const isShowSearchBar = computed(() => {
     <HomeNavBar></HomeNavBar>
 
     <div class="banner">
-      <img :src="getAssertUrl('home/banner.webp')">
+      <img :src="getAssertUrl('home/banner.jpg')">
     </div>
 
     <SearchBox/>

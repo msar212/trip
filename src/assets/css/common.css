@@ -4,7 +4,9 @@
   --van-index-bar-index-active-color: var(--primary-color) !important; /* vant index-bar组件选中索引颜色 */
   --index-anchor-font-weight: 500; /* 索引锚点字体加粗 */
 
-  --theme-linear-gradient: linear-gradient(90deg, #fa8c1d, #fcaf3f);
+  --theme-linear-gradient: linear-gradient(90deg, #fa8c1d, #fcaf3f); /* 首页搜索按钮背景色 */
+
+  --van-primary-color: var(--primary-color) !important; /* 用于修改详情页的 navbar */
 }
 
 body {
@@ -15,7 +17,7 @@ body {
 .top-page {
   position: relative;
   z-index: 9;
-  background-color: #fff;
   height: 100vh;
+  background-color: #fff;
   overflow-y: auto;
 }

@@ -5,10 +5,6 @@ const props = defineProps({
     default: () => ({})
   }
 })
-
-const itemClick = () => {
-  console.log("itemClick", props.itemData.houseId)
-}
 </script>
 
 <template>

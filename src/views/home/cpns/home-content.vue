@@ -4,6 +4,7 @@ import { useRouter } from "vue-router";
 
 import HouseItemV9 from "@/components/house-item-v9/house-item-v9.vue"
 import HouseItemV3 from "@/components/house-item-v3/house-item-v3.vue"
+
 import useHomeStore from '@/stores/modules/home';
 
 const homeStore = useHomeStore()
@@ -52,7 +53,6 @@ const itemClick = (item) => {
           </template>
         </template>
       </div>
-      
     </div>
   </div>
 </template>
