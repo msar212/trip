@@ -7,6 +7,7 @@ const routes = [
   { path: '/order', component: () => import('@/views/order/order.vue') },
   { path: '/message', component: () => import('@/views/message/message.vue') },
   { path: '/city', component: () => import('@/views/city/city.vue') },
+  { path: '/search', component: () => import('@/views/search/search.vue') },
 ]
 
 const router = createRouter({

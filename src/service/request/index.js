@@ -1,11 +1,30 @@
 import axios from 'axios'
-import { BASE_URL, TIMEOUT } from './config'
+
+import { BASE_URL, TIMEOUT } from '@/service/request/config'
+
+import useMainStore from '@/stores/modules/main'
+
+const mainStore = useMainStore()
 
 class DDFRequest{
-  constructor(baseURL,timeout){
+  constructor(baseURL, timeout){
     this.instance = axios.create({
       baseURL: baseURL,
       timeout: timeout
+    })
+
+    this.instance.interceptors.request.use(config => {
+      mainStore.isLoading = true
+      return config
+    }, err => {
+      return err
+    })
+    this.instance.interceptors.response.use(res => {
+      mainStore.isLoading = false
+      return res
+    }, err => {
+      mainStore.isLoading = false
+      return err
     })
   }
 
@@ -19,7 +38,7 @@ class DDFRequest{
     })
   }
 
-  get(url,params){
+  get(url, params = {}){
     return this.request({
       method: 'get',
       url: url,
@@ -27,7 +46,7 @@ class DDFRequest{
     })
   }
 
-  post(url,data){
+  post(url, data = {}){
     return this.request({
       method: 'post',
       url: url,
